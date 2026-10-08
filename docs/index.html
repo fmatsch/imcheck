@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>imcheck – Bilder und Videos prüfen</title>
+<meta name="description" content="imcheck liest Metadaten aus Bildern und Videos und sucht Spuren von KI-Erzeugung und Bearbeitung (Photoshop u. a.). Portabel, lokal, kostenlos.">
+<style>
+:root{--bg:#f5f6f8;--p:#fff;--t:#1b1f27;--m:#697386;--l:#e1e4ea;--a:#2f6bff}
+@media(prefers-color-scheme:dark){:root{--bg:#14161a;--p:#1c1f26;--t:#e8eaf0;--m:#98a2b3;--l:#2b303a;--a:#6c97ff}}
+*{box-sizing:border-box}body{margin:0;font:16px/1.55 -apple-system,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--t)}
+main{max-width:860px;margin:0 auto;padding:56px 20px}
+h1{font-size:44px;margin:0;letter-spacing:-1.5px}h1 b{color:var(--a)}
+.lead{font-size:20px;color:var(--m);margin:10px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+a.btn{background:var(--a);color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600}
+a.btn.alt{background:var(--p);color:var(--t);border:1px solid var(--l)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:40px 0}
+.c{background:var(--p);border:1px solid var(--l);border-radius:14px;padding:18px}.c h3{margin:0 0 6px;font-size:16px}.c p{margin:0;color:var(--m);font-size:14px}
+small,li{color:var(--m)}code{background:var(--p);border:1px solid var(--l);padding:1px 6px;border-radius:6px}
+</style></head><body><main>
+<h1>im<b>check</b></h1>
+<p class="lead">Metadaten lesen. Spuren von KI und Bearbeitung finden. Bilder und Videos – lokal auf deinem Rechner.</p>
+<div class="btns">
+<a class="btn" href="https://github.com/fmatsch/imcheck/releases/latest">Download für Windows (portabel .exe)</a>
+<a class="btn alt" href="https://github.com/fmatsch/imcheck/releases/latest">Download für macOS (.dmg)</a>
+<a class="btn alt" href="https://github.com/fmatsch/imcheck">Quellcode</a></div>
+<div class="grid">
+<div class="c"><h3>Alle Metadaten</h3><p>EXIF, IPTC, XMP, ICC, GPS, PNG-Chunks, MakerNotes über ExifTool; Video-Streams über FFprobe.</p></div>
+<div class="c"><h3>KI-Erkennung</h3><p>C2PA Content Credentials, IPTC „Digital Source Type“, Prompt-Daten von Stable Diffusion/ComfyUI, Midjourney, DALL·E, Firefly, Gemini u. a.</p></div>
+<div class="c"><h3>Bearbeitungsspuren</h3><p>Photoshop-/Lightroom-Blöcke, XMP-Verlauf, Software-Tags, Zeitstempel-Abweichungen, Neukodierung bei Videos.</p></div>
+<div class="c"><h3>Fehlerlevel-Analyse</h3><p>ELA macht unterschiedlich komprimierte Bildbereiche sichtbar.</p></div>
+<div class="c"><h3>Ohne Installation</h3><p>Windows: <code>.exe</code> doppelklicken, fertig. Nichts wird hochgeladen.</p></div>
+<div class="c"><h3>Open Source</h3><p>MIT-Lizenz. Basiert auf Electron, ExifTool, FFmpeg/FFprobe und der C2PA-Bibliothek.</p></div></div>
+<h2>Hinweise</h2><ul>
+<li>macOS: App ist nicht notarisiert – beim ersten Start Rechtsklick → „Öffnen“.</li>
+<li>Windows: SmartScreen → „Weitere Informationen“ → „Trotzdem ausführen“.</li>
+<li>Metadaten können entfernt oder gefälscht werden. Kein Fund ist kein Beweis für Echtheit; unsichtbare Wasserzeichen (SynthID) werden nicht ausgelesen.</li></ul>
+<p><small>© fmatsch · MIT</small></p></main></body></html>

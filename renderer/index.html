@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' blob: data:; media-src file: blob:; style-src 'self'; script-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>imcheck</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside id="side">
+  <header><span class="logo">im<b>check</b></span></header>
+  <button id="add" class="primary">Dateien wählen …</button>
+  <ul id="list"></ul>
+  <p class="hint">Bilder und Videos hierher ziehen. Alles bleibt lokal auf diesem Rechner.</p>
+</aside>
+<main id="main">
+  <section id="empty">
+    <div class="drop"><h1>Bilder & Videos prüfen</h1>
+    <p>Metadaten · KI-Spuren · Bearbeitungsspuren · Content Credentials (C2PA) · Fehlerlevel-Analyse</p>
+    <button id="add2" class="primary">Dateien wählen</button></div>
+  </section>
+  <section id="view" hidden>
+    <div class="top">
+      <div><h2 id="fname"></h2><div id="fmeta" class="muted"></div></div>
+      <div class="actions"><button id="reveal">Anzeigen</button><button id="export">Bericht (JSON)</button></div>
+    </div>
+    <nav id="tabs"></nav>
+    <div id="pane"></div>
+  </section>
+  <div id="dropover" hidden>Zum Analysieren loslassen</div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

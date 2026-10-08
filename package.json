@@ -1,0 +1,77 @@
+{
+  "name": "imcheck",
+  "version": "1.0.0",
+  "description": "imcheck – Bilder und Videos auf Metadaten, KI-Erzeugung und Bearbeitung prüfen",
+  "main": "main.js",
+  "author": "fmatsch",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win portable",
+    "test": "node test/smoke.js"
+  },
+  "dependencies": {
+    "@contentauth/c2pa-node": "^0.9.9",
+    "exiftool-vendored": "^39.0.1",
+    "ffprobe-static": "^3.1.0"
+  },
+  "devDependencies": {
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "ist.fmatsch.imcheck",
+    "productName": "imcheck",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**",
+      "renderer/**",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/exiftool-vendored*/**",
+      "node_modules/ffprobe-static/**",
+      "node_modules/@contentauth/**"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.photography",
+      "identity": null,
+      "artifactName": "imcheck-${version}-mac-${arch}.${ext}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "imcheck-${version}-windows-portable.exe"
+    },
+    "portable": {
+      "artifactName": "imcheck-${version}-windows-portable.exe"
+    }
+  }
+}
